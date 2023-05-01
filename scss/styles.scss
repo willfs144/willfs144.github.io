@@ -1,0 +1,477 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+$carrot-color: #e67e22;
+$black: #130f40;
+$white: #fff;
+$light-color: #666;
+$light-bg: #eee;
+$border: .2rem solid $black;
+$box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+
+@mixin form-btn {
+  width: 100%;
+  text-align: center;
+
+  &:hover {
+    background: $black;
+  }
+}
+
+@mixin white-btn {
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    color: $black;
+  }
+
+  &::before {
+    background: $white;
+  }
+}
+
+html {
+  font-size: 80.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: $black;
+
+  span {
+    color: $carrot-color;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .8rem 2.8rem;
+  border-radius: 5rem;
+  border-top-left-radius: 0;
+  border: $border;
+  cursor: pointer;
+  background: none;
+  color: $black;
+  font-size: 1.7rem;
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $black;
+    z-index: -1;
+    transition: .2s linear;
+    clip-path: circle(0% at 0% 5%);
+  }
+
+  &:hover::before {
+    clip-path: circle(100%);
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+.logo {
+  font-size: 2rem;
+  color: $black;
+  font-weight: bolder;
+
+  i {
+    color: $carrot-color;
+  }
+}
+
+ .navbar a {
+   margin: 0 1rem;
+   font-size: 1.7rem;
+   color: $light-color;
+
+  &:hover {
+     color: $carrot-color;
+   }
+ }
+
+.icons a,
+.icons div {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  color: $black;
+  cursor: pointer;
+
+  &:hover {
+    color: $carrot-color;
+  }
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: url(../image/home_bg_img.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .content {
+     width: 37rem;
+
+    h3 {
+      font-size: 4.2rem;
+      color: $white;
+      padding-bottom: 1rem;
+
+      span {
+        color: $carrot-color;
+      }
+    }
+
+    .btn {
+      @include white-btn();
+    }
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+  }
+}
+
+ h3{
+   font-size: 2.5rem;
+   color: $black;
+
+   span {
+     color: $carrot-color;
+   }
+ }
+
+p {
+  padding: 1rem 0;
+  line-height: 2;
+  color: $light-color;
+  font-size: 1.6rem;
+}
+
+.amount {
+  font-size: 2.5rem;
+  color: $black;
+  padding: .5rem 0;
+}
+  
+a {
+
+  img {
+    height: 15rem;
+    margin-top: 1rem;
+  }
+
+  &:hover img {
+    transform: rotate(15deg);
+  }
+}
+.content{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.services{
+
+    i {
+      margin-top: 0.5rem;
+      height: 6.5rem;
+      width: 6.5rem;
+      line-height: 6.5rem;
+      font-size: 3rem;
+      color: $white;
+      background: $carrot-color;
+      border-radius: 50%;
+      margin-bottom: .5rem;
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      color: $black;
+      padding: 1rem 0;
+    }
+}
+
+.plan  {
+    .box {
+        position: relative;
+        padding: 2rem;
+        border-radius: .5rem;
+        position: relative;
+        margin: 1.5rem;
+        background: $light-bg;}
+
+  .btn {
+    position: absolute;
+    bottom: -2rem;
+    right: 2rem;
+    background: $white;
+  }
+
+  .title {
+    text-align: center;
+    color: $carrot-color;
+    font-size: 2rem;
+  }
+
+  .day {
+    text-align: center;
+    color: $black;
+    font-size: 3.5rem;
+  }
+
+  .icon {
+    color: $carrot-color;
+    font-size: 5rem;
+    padding: 2rem 0;
+  }
+
+  .list {
+    margin: 1rem 0;
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      color: $light-color;
+      padding: 1rem 0;
+
+      span {
+        color: $carrot-color;
+      }
+    }
+  }
+
+  .amount {
+    font-size: 4rem;
+    font-weight: bolder;
+    color: $black;
+
+    span {
+      font-size: 4rem;
+    }
+  }
+}
+
+
+
+.contact {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  .image {
+    flex: 1 1 40rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  form {
+    flex: 1 1 40rem;
+    padding: 2rem 7%;
+
+    .btn {
+      @include form-btn();
+    }
+
+    h3 {
+      font-size: 3rem;
+      padding-bottom: 1rem;
+      color: $black;
+    }
+
+    .box,
+    textarea {
+      width: 100%;
+      border-bottom: $border;
+      border-width: .1rem;
+      font-size: 1.6rem;
+      text-transform: none;
+      color: $black;
+      padding: 1.5rem 0;
+      margin: 1rem 0;
+    }
+
+    textarea {
+      height: 15rem;
+      resize: none;
+    }
+  }
+}
+/*.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .image {
+    flex: 1 1 40rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .content {
+    flex: 1 1 40rem;
+
+    h3 {
+      color: $black;
+      font-size: 4rem;
+
+      span {
+        color: $carrot-color;
+      }
+    }
+
+    p {
+      font-size: 1.6rem;
+      color: $light-color;
+      padding: 1rem 0;
+      line-height: 2;
+    }
+  }
+}
+/*
+.header { 
+  
+  .logo {
+    font-size: 2rem;
+    color: $black;
+    font-weight: bolder;
+
+    i {
+      color: $carrot-color;
+    }
+  }
+
+  .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: $light-color;
+
+    &:hover {
+      color: $carrot-color;
+    }
+  }
+
+  .icons a,
+  .icons div {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    color: $black;
+    cursor: pointer;
+
+    &:hover {
+      color: $carrot-color;
+    }
+  }
+}
+
+
+.login-form {
+  position: absolute;  
+  right: 2rem;
+  width: 35rem;
+  border-radius: 1rem;
+  background: $white; 
+  padding: 2rem;
+
+  h3 {
+    color: $black;
+    font-size: 2.5rem;
+    padding-bottom: .5rem;
+  }
+
+  .box {
+    width: 100%;
+    border-bottom: $border;
+    border-width: .1rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    color: $black;  
+    margin: 1rem 0;
+  }
+
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+
+    label {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: $light-color;
+    }
+  }
+
+
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    a {
+      font-size: 1.4rem;
+      color: $carrot-color;
+
+      &:hover {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+}*/
